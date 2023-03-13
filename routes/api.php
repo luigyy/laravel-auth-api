@@ -22,3 +22,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/auth/register', [AuthController::class, 'createUser']);
 Route::post('/auth/login', [AuthController::class, 'loginUser']);
+
+
+//public route
+Route::get('/greet', function () {
+    return "hello world!";
+});
+
+//protected route
+Route::get('/ping', function () {
+    return "Pong!!";
+})->middleware('auth:sanctum');
